@@ -12,7 +12,7 @@
 USING_NS_CC;
 GameScene::GameScene()
 {
-    
+
 }
 
 GameScene::~GameScene()
@@ -23,6 +23,7 @@ GameScene::~GameScene()
 GameScene* GameScene::createScene()
 {
     auto scene = new GameScene();
+    scene->init();
     auto size = Director::getInstance()->getVisibleSize();
     auto origin = Director::getInstance()->getVisibleOrigin();
     auto bg = Sprite::create("bg.jpg");
@@ -30,4 +31,12 @@ GameScene* GameScene::createScene()
     scene->addChild(bg);
 
     return scene;
+}
+
+bool GameScene::init()
+{
+    CCLOG("GameScene init IN");
+    auto gameView = GameView::create();
+    this->addChild(gameView);
+    return true;
 }

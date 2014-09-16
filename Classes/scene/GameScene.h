@@ -19,6 +19,7 @@ public:
 //    virtual bool onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *unused_event);
 private:
     GameScene();
+    virtual bool init();
 };
 
 #endif /* defined(__ToBeXB__GameScene__) */
